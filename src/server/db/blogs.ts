@@ -8,7 +8,7 @@ const post = async (title: string, content: string, authorid: string) => Query('
 
 const put = async (id: string, title: string, content: string) => Query('UPDATE Blogs set title=?, content=? WHERE id=?', [title, content, id])
 
-const remove = async (id: string) => Query('DELTE FROM Blogs WHERE id = ?', [id])
+const remove = async (id: string) => Query('DELETE FROM Blogs WHERE id = ?', [id])
 
 export default {
     all,

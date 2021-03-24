@@ -71,12 +71,14 @@ const EditBlog: React.FC<blogProps> = ({ history, match: { params: { id } } }) =
     }
 
     return (
-        <div>
+        <div className="container mt-5">
             <form>
                 <div className="form-group">
+                    <label htmlFor="">New Title</label>
                     <input type="text" name="title" id="title" value={newTitle} onChange={handleTitle} className="form-crontrol" />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="">New Content</label>
                     <textarea name="content" id="" cols={30} rows={10} value={newContent} onChange={handleContent} className="form-control" ></textarea>
                 </div>
                     <button className="btn btn-info mx-2" onClick={handleEdit}>Save Edits</button>

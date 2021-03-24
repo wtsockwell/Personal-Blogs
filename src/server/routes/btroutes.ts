@@ -3,6 +3,15 @@ import db from '../db/connection';
 
 const router = express.Router();
 
+router.get('/:id', async(req,res) =>{
+    try {
+        let id = req.params.id
+        res.json(await db.blogtags.get(id))
+    } catch (err) {
+        console.log(err)
+        res.sendStatus(500)
+    }
+})
 router.post('/', async (req, res) => {
     let bloginfo = req.body
     try {
