@@ -2,7 +2,7 @@ import { Query } from './connection'
 
 const all = async () => Query('SELECT b.id, a.name as user, b.content, b.title FROM Blogs b JOIN Authors a ON a.id = b.authorid ORDER BY b.id')
 
-const one = async (id: string) => Query('SELECT a.name as user, b.content, b.title FROM Blogs b JOIN Authors a ON a.id = b.authorid FROM Blogs where id=?', [id])
+const one = async (id: string) => Query('SELECT a.name as user, b.content, b.title FROM Blogs b JOIN Authors a ON a.id = b.authorid where b.id=?', [id])
 
 const post = async (title: string, content: string, authorid: string) => Query('INSERT INTO Blogs (title, content, authorid) VALUES(?,?,?)', [title, content, authorid])
 
